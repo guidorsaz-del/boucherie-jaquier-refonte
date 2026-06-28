@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boucherie-Charcuterie Jaquier — Siviriez, Fribourg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--color-primary:#8b1a1a;--color-dark:#1a0a06;--color-bg:#faf5f0;--color-cream:#f0e8e0;--color-text:#2d1a12;--color-muted:#7a6050;--color-border:#e0d0c0;--color-light:#fff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Lato',sans-serif;background:var(--color-bg);color:var(--color-text);font-weight:300;line-height:1.75;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,245,240,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--color-border);padding:0.9rem 2.5rem;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{height:52px;width:auto;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--color-text);text-decoration:none;font-size:0.75rem;letter-spacing:.15em;text-transform:uppercase;transition:color .3s;}
+.nav-links a:hover{color:var(--color-primary);}
+.nav-cta{background:var(--color-primary);color:#fff;padding:.55rem 1.4rem;font-size:0.73rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .3s;}
+.nav-cta:hover{background:#6b1212;}
+/* IMAGE: hero-background */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;background:linear-gradient(rgba(20,5,2,0.65),rgba(15,4,2,0.78)),url('https://images.unsplash.com/photo-1606677661991-446cea8ee182?w=1600&auto=format&fit=crop&q=85') center/cover no-repeat;position:relative;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,var(--color-bg));}
+.hero-content{position:relative;z-index:1;max-width:700px;}
+.hero-logo{margin-bottom:2rem;}
+.hero-logo img{height:80px;filter:brightness(0) invert(1);}
+.hero-tag{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:#d4a070;display:block;margin-bottom:1.2rem;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4.2rem);color:#fff;font-weight:700;line-height:1.1;margin-bottom:1.2rem;}
+.hero-title em{font-style:italic;color:#d4a070;font-weight:400;}
+.hero-sub{font-size:.84rem;color:rgba(255,255,255,.7);letter-spacing:.1em;margin-bottom:2.5rem;}
+.btn-primary{display:inline-block;background:var(--color-primary);color:#fff;padding:.9rem 2.4rem;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .3s;margin-right:.8rem;}
+.btn-primary:hover{background:#6b1212;}
+.btn-outline{display:inline-block;border:1px solid #fff;color:#fff;padding:.88rem 2.4rem;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .3s;}
+.btn-outline:hover{background:#fff;color:var(--color-dark);}
+section{padding:5rem 2rem;}
+.container{max-width:1060px;margin:0 auto;}
+.section-label{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.7rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:600;line-height:1.15;margin-bottom:1rem;}
+.section-title em{font-style:italic;color:var(--color-primary);}
+.divider{width:44px;height:2px;background:var(--color-primary);margin:1.2rem 0;}
+/* SAVOIR-FAIRE */
+#savoir-faire{background:var(--color-light);}
+.sf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;}
+.sf-card{background:var(--color-bg);padding:2.5rem 2rem;border-top:3px solid var(--color-primary);transition:transform .3s,box-shadow .3s;}
+.sf-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(139,26,26,.1);}
+.sf-icon{font-size:2.2rem;margin-bottom:1.2rem;}
+.sf-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:.7rem;}
+.sf-card p{font-size:.83rem;color:var(--color-muted);line-height:1.9;}
+/* VITRINE */
+#vitrine{background:var(--color-dark);color:#fff;}
+.vitrine-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+/* IMAGE: vitrine-photo */
+.vitrine-img{height:480px;background:url('https://images.unsplash.com/photo-1597417321971-45e034f7a993?w=900&auto=format&fit=crop&q=85') center/cover no-repeat;}
+.vitrine-text .section-label{color:#d4a070;}
+.vitrine-text .section-title{color:#fff;}
+.vitrine-text .section-title em{color:#d4a070;}
+.vitrine-text .divider{background:#d4a070;}
+.vitrine-text p{font-size:.86rem;color:rgba(255,255,255,.7);line-height:2;margin-bottom:1rem;}
+.vitrine-list{list-style:none;margin-top:1.5rem;}
+.vitrine-list li{font-size:.84rem;color:rgba(255,255,255,.7);padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:.8rem;}
+.vitrine-list li::before{content:'●';color:#d4a070;font-size:.5rem;}
+/* ARTISAN */
+#artisan{background:var(--color-bg);}
+.artisan-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+/* IMAGE: artisan-photo */
+.artisan-img{height:460px;background:url('https://images.unsplash.com/photo-1560166444-441876015a70?w=900&auto=format&fit=crop&q=85') center/cover no-repeat;}
+.artisan-text p{font-size:.86rem;color:var(--color-muted);line-height:2;margin-bottom:1rem;}
+/* HORAIRES */
+#horaires{background:var(--color-cream);}
+.horaires-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;}
+.horaires-table{width:100%;border-collapse:collapse;}
+.horaires-table tr{border-bottom:1px solid var(--color-border);}
+.horaires-table td{padding:.75rem 0;font-size:.84rem;}
+.horaires-table td:first-child{color:var(--color-muted);}
+.horaires-table td:last-child{text-align:right;font-weight:400;}
+.horaires-note{background:var(--color-primary);color:#fff;padding:1.8rem 2rem;margin-top:2rem;}
+.horaires-note p{font-size:.84rem;line-height:1.8;}
+.horaires-note strong{display:block;margin-bottom:.4rem;font-size:1rem;letter-spacing:.05em;}
+/* CONTACT */
+#contact{background:var(--color-light);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;margin-top:3rem;}
+.ccard{border-top:3px solid var(--color-primary);padding:2rem;}
+.ccard h3{font-family:'Playfair Display',serif;color:var(--color-primary);font-size:1.2rem;margin-bottom:1rem;}
+.ccard p{font-size:.83rem;color:var(--color-muted);line-height:2.1;}
+.ccard a{color:var(--color-primary);text-decoration:none;}
+footer{background:var(--color-dark);color:rgba(255,255,255,.4);padding:2rem;text-align:center;font-size:.72rem;letter-spacing:.1em;}
+footer span{color:#d4a070;}
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .sf-grid{grid-template-columns:1fr;}
+  .vitrine-inner,.artisan-inner{grid-template-columns:1fr;}
+  .vitrine-img,.artisan-img{height:240px;}
+  .horaires-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#"><img src="http://www.boucherie-jaquier.ch/ui/img/header500.png" alt="Boucherie-Charcuterie Jaquier" onerror="this.outerHTML='<span style=\'font-family:Playfair Display,serif;font-size:1.3rem;color:#8b1a1a;font-weight:700\'>Jaquier</span>'"></a>
+  <ul class="nav-links">
+    <li><a href="#savoir-faire">Nos Métiers</a></li>
+    <li><a href="#vitrine">Notre Vitrine</a></li>
+    <li><a href="#artisan">L'Artisan</a></li>
+    <li><a href="#horaires">Horaires</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:+41266561385" class="nav-cta">Nous appeler</a>
+</nav>
+
+<!-- IMAGE: hero-background -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-logo"><img src="http://www.boucherie-jaquier.ch/ui/img/header500.png" alt="Boucherie-Charcuterie Jaquier"></div>
+    <span class="hero-tag">Artisan Boucher — Siviriez, Fribourg — depuis plus de 30 ans</span>
+    <h1 class="hero-title">La <em>tradition</em> du bon<br>boucher de village</h1>
+    <p class="hero-sub">Viandes fraîches · Charcuterie maison · Service personnalisé</p>
+    <a href="#vitrine" class="btn-primary">Notre vitrine</a>
+    <a href="#contact" class="btn-outline">Nous trouver</a>
+  </div>
+</section>
+
+<section id="savoir-faire">
+  <div class="container">
+    <p class="section-label fade-in">Ce que nous faisons</p>
+    <h2 class="section-title fade-in">Trois <em>métiers</em>, une passion</h2>
+    <div class="divider fade-in"></div>
+    <div class="sf-grid">
+      <div class="sf-card fade-in">
+        <div class="sf-icon">🥩</div>
+        <h3>Boucherie</h3>
+        <p>Bœuf, veau, porc, agneau et volaille soigneusement sélectionnés. Viandes fraîches découpées sur place selon vos besoins, du rôti au pavé en passant par la pièce du boucher.</p>
+      </div>
+      <div class="sf-card fade-in">
+        <div class="sf-icon">🌿</div>
+        <h3>Charcuterie artisanale</h3>
+        <p>Saucissons, pâtés, rillettes, jambons et spécialités fribourgeoises préparés dans notre atelier avec des recettes transmises de génération en génération.</p>
+      </div>
+      <div class="sf-card fade-in">
+        <div class="sf-icon">🎁</div>
+        <h3>Commandes sur mesure</h3>
+        <p>Besoin d'un plateau de charcuterie pour un apéritif, d'une pièce spéciale pour une fête ou d'une commande pour un événement ? Notre équipe se fait un plaisir de vous préparer votre commande au mieux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE: vitrine-photo -->
+<section id="vitrine">
+  <div class="container">
+    <div class="vitrine-inner">
+      <div class="vitrine-img fade-in"></div>
+      <div class="vitrine-text fade-in">
+        <p class="section-label">Notre vitrine</p>
+        <h2 class="section-title">Des <em>produits frais</em><br>chaque matin</h2>
+        <div class="divider"></div>
+        <p>Chaque matin, notre vitrine se remplit de produits frais découpés sur place : viandes de race sélectionnées, charcuteries artisanales et préparations maison pour faciliter vos repas quotidiens.</p>
+        <ul class="vitrine-list">
+          <li>Viandes rouges et blanches fraîches</li>
+          <li>Charcuterie et spécialités fribourgeoises</li>
+          <li>Viande d'agneau et veau de qualité</li>
+          <li>Saucisses fraîches préparées le jour même</li>
+          <li>Plats préparés et marinades maison</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE: artisan-photo -->
+<section id="artisan">
+  <div class="container">
+    <div class="artisan-inner">
+      <div class="fade-in">
+        <p class="section-label">Notre histoire</p>
+        <h2 class="section-title">L'<em>artisan boucher</em><br>au cœur du village</h2>
+        <div class="divider"></div>
+        <p>Implantée au cœur de Siviriez, la Boucherie-Charcuterie Jaquier est une institution locale. Nous perpétuons un savoir-faire artisanal transmis avec passion, en accordant une importance particulière à la qualité des produits et à la relation de proximité avec nos clients.</p>
+        <p>Chaque pièce est préparée avec soin, chaque commande est traitée individuellement. Chez Jaquier, vous n'êtes pas un numéro — vous êtes un habitué que l'on connaît par son prénom.</p>
+        <p>Notre équipe se fait un plaisir de vous conseiller, de préparer votre commande au mieux et de vous faire découvrir nos spécialités saisonnières.</p>
+      </div>
+      <div class="artisan-img fade-in"></div>
+    </div>
+  </div>
+</section>
+
+<section id="horaires">
+  <div class="container">
+    <p class="section-label fade-in">Quand nous rendre visite</p>
+    <h2 class="section-title fade-in">Horaires <em>d'ouverture</em></h2>
+    <div class="divider fade-in"></div>
+    <div class="horaires-grid">
+      <div class="fade-in">
+        <table class="horaires-table">
+          <tr><td>Lundi</td><td>7h00 – 12h00 / 13h15 – 18h30</td></tr>
+          <tr><td>Mardi</td><td>7h00 – 12h00 / 13h15 – 18h30</td></tr>
+          <tr><td>Mercredi</td><td>7h00 – 12h00 (fermé l'après-midi)</td></tr>
+          <tr><td>Jeudi</td><td>7h00 – 12h00 / 13h15 – 18h30</td></tr>
+          <tr><td>Vendredi</td><td>7h00 – 12h00 / 13h15 – 18h30</td></tr>
+          <tr><td>Samedi</td><td>7h00 – 12h30 / 13h30 – 16h00</td></tr>
+          <tr><td>Dimanche</td><td style="color:#8b1a1a;">Fermé</td></tr>
+        </table>
+      </div>
+      <div class="fade-in">
+        <div class="horaires-note">
+          <strong>Commandes et préparations spéciales</strong>
+          <p>Pour toute commande spéciale (plateaux, grosses pièces, événements), contactez-nous à l'avance. Nous nous adaptons à vos besoins avec plaisir.</p>
+        </div>
+        <div style="margin-top:1.5rem;padding:1.5rem;border:1px solid var(--color-border);">
+          <p style="font-size:.84rem;color:var(--color-muted);">📍 Route de Romont 9, 1678 Siviriez<br>📞 <a href="tel:+41266561385" style="color:var(--color-primary);">+41 26 656 13 85</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label fade-in">Nous trouver</p>
+    <h2 class="section-title fade-in">Contact & <em>accès</em></h2>
+    <div class="divider fade-in"></div>
+    <div class="contact-grid">
+      <div class="ccard fade-in">
+        <h3>Adresse</h3>
+        <p>Route de Romont 9<br>1678 Siviriez (FR)<br>Suisse</p>
+      </div>
+      <div class="ccard fade-in">
+        <h3>Téléphone & Email</h3>
+        <p><a href="tel:+41266561385">+41 26 656 13 85</a><br><a href="mailto:boucheriejaquier@gmail.com">boucheriejaquier@gmail.com</a><br><br>Suivez-nous sur Facebook</p>
+      </div>
+      <div class="ccard fade-in">
+        <h3>Commandes</h3>
+        <p>Pour toute commande spéciale, contactez-nous par téléphone ou email. Nous préparons votre commande avec le plus grand soin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Boucherie-Charcuterie Jaquier Sàrl</span> — Route de Romont 9, 1678 Siviriez — +41 26 656 13 85</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
